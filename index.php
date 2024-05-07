@@ -59,41 +59,38 @@ $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="content-wrapper">
             <div class="content">
-                <div class="container-fluid">
-                    <div class="row pt-1" style="text-transform: uppercase;">
-                    <div>
-                        <div class="col-lg-12">
-                            <div class="card p-4">
-                                <div class="table-responsive">
-                                    <table id="tablaproductos" class="table table-active table-bordered table-condensed">
-                                        <thead class="text-center" style="color: white;">
-                                            <tr style="background-color:#3498DB ">
-                                                <th>#</th>
-                                                <th>NOMBRE</th>
-                                                <th>DESCRIPCIÓN</th>
-                                                <th>PRECIO</th>
-                                                <th>CANTIDAD</th>
-                                                <th>ACCIONES</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
+                <div class="table-responsive">
+                    <div class="col-lg-12">
+                        <div class="card p-4">
+                            <div class="table-responsive">
+                                <table id="tablaproductos" class="table table-active table-bordered table-condensed">
+                                    <thead class="text-center" style="color: white;">
+                                        <tr style="background-color:#3498DB ">
+                                            <th>#</th>
+                                            <th>NOMBRE</th>
+                                            <th>DESCRIPCIÓN</th>
+                                            <th>PRECIO</th>
+                                            <th>CANTIDAD</th>
+                                            <th>ACCIONES</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
                                             foreach ($data as $dat) {
-                                            ?>
-                                            <tr>
-                                                <td style="text-transform:uppercase"><?php echo $dat['idproducto'] ?></td>
-                                                <td style="text-transform:uppercase"><?php echo $dat['nombre'] ?></td>
-                                                <td style="text-transform:uppercase"><?php echo $dat['descripcion'] ?></td>
-                                                <td style="text-transform:uppercase"><?php echo $dat['precio'] ?></td>
-                                                <td style="text-transform:uppercase"><?php echo $dat['cantidad'] ?></td>
-                                                <?php echo '<td></td>'; ?>
-                                            </tr>
+                                        ?>
+                                        <tr>
+                                            <td style="text-transform:uppercase" align="center"><?php echo $dat['idproducto'] ?></td>
+                                            <td style="text-transform:uppercase"><?php echo $dat['nombre'] ?></td>
+                                            <td style="text-transform:uppercase"><?php echo $dat['descripcion'] ?></td>
+                                            <td style="text-transform:uppercase" align="right"><?php echo $dat['precio'] ?></td>
+                                            <td style="text-transform:uppercase" align="right"><?php echo $dat['cantidad'] ?></td>
+                                            <?php echo '<td></td>'; ?>
+                                        </tr>
                                         <?php
                                         }
                                         ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
